@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CodeQuiz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row d-flex">
+            <div class="mr-auto p-2">
+                <h5>
+                    View high scores
+                </h5>
+            </div>
+            <div class="p-2">
+                <h5>
+                    Time
+                </h5>
+            </div>
+        </div>
+        <div>
+            <br>
+            <br>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript" style="text-align:center; justify-content:center; align-items:center;">
+
+            var announcement = "Coding Quiz Challenge"
+            var instructions = "Try to answer the following code-related questions withing the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds! "
+            var body = document.body;
+   
+            var h1El = document.createElement('h1');
+            var h2El = document.createElement('h2');
+            var h4El = document.createElement('h4');
+
+            
+            h2El.textContent = announcement;
+            h2El.setAttribute('style', 'margin:auto; width:50%; text-align:center;');
+            body.appendChild(h2El);
+
+            h4El.textContent = instructions;
+            h4El.setAttribute('style', 'margin:auto; width:50%; font-weight:lighter; text-align:center; padding:10px;');
+            body.appendChild(h4El);
+            
+            let btn = document.createElement("button");
+            btn.innerHTML = "Start Quiz";
+            btn.setAttribute('id', 'StartQuiz');
+            btn.setAttribute('class', 'buttonStart');
+            document.body.appendChild(btn);
+            
+
+            var questions = [
+            { q: 'Question one:', a1: 'correctAnswer1', a2: 'wrongAnswer1', a3: 'wrongAnswer2', a4: 'wrongAnswer3' },
+            { q: 'Question two:', a1: 'wrongAnswer1', a2: 'wrongAnswer2', a3: 'correctAnswer2', a4: 'wrongAnswer3' },
+            { q: 'Question three:', a1: 'wrongAnswer1', a2: 'wrongAnswer2', a3: 'wrongAnswer3', a4: 'correctAnswer3'},
+            { q: 'Question four:', a1: 'wrongAnswer1', a2: 'correctAnswer4', a3: 'wrongAnswer2', a4: 'wrongAnswer3'},
+            { q: 'Question five:', a1: 'correctAnswer5', a2: 'wrongAnswer1', a3: 'wrongAnswer2', a4: 'wrongAnswer3'}
+        ];
+            var score = 0;
+
+            var StartQuizButton = document.querySelector('#StartQuiz')
+            StartQuizButton.addEventListener("click", RunQuestions);
+
+            function RunQuestions(){
+                var StartQuizButtonEL = document.getElementById('StartQuiz');
+                StartQuizButtonEL.style.display = 'none';
+                let answbtn1 = document.createElement("button");
+                let answbtn2 = document.createElement("button");
+                let answbtn3 = document.createElement("button");
+                let answbtn4 = document.createElement("button");
+                
+                var answbtn1comment = "answbtn1comment"
+                var answbtn2comment = "answbtn2comment"
+                var answbtn3comment = "answbtn3comment"
+                var answbtn4comment = "answbtn4comment"
+
+
+
+                for(var i = 0;i < questions.length;i++) {
+                    var announcement = questions[i].q;
+                    var instructions = "";
+
+                    h2El.textContent = announcement;
+                    h2El.setAttribute('style', 'margin:auto; width:50%; text-align:center;');
+                    body.appendChild(h2El);
+
+                    h4El.textContent = instructions;
+                    h4El.setAttribute('style', 'margin:auto; width:50%; font-weight:lighter; text-align:center; padding:10px;');
+                    body.appendChild(h4El);
+
+                    var answbtn1comment = "1. " + questions[i].a1;
+                    var answbtn2comment = "2. " + questions[i].a2;
+                    var answbtn3comment = "3. " + questions[i].a3;
+                    var answbtn4comment = "4. " + questions[i].a4;
+                    
+                    //var answbutton1 = document.querySelector('#AnswerOne');
+                    //StartQuizButton.addEventListener("click", );
+                    //var answbutton2 = document.querySelector('#AnswerTwo')
+                    //StartQuizButton.addEventListener("click", );
+                    //var answbutton3 = document.querySelector('#AnswerThree')
+                    //StartQuizButton.addEventListener("click", );
+                    //var answbutton4 = document.querySelector('#AnswerFour')
+                   // StartQuizButton.addEventListener("click", );
+                   break;
+
+                    
+
+                };
+
+
+                answbtn1.innerHTML = answbtn1comment;
+                answbtn1.setAttribute('id', 'AnswerOne');
+                answbtn1.setAttribute('class', 'buttonChoice');
+                document.body.appendChild(answbtn1);
+
+                answbtn2.innerHTML = answbtn2comment;
+                answbtn2.setAttribute('id', 'AnswerTwo');
+                answbtn2.setAttribute('class', 'buttonChoice');
+                document.body.appendChild(answbtn2);
+
+                answbtn3.innerHTML = answbtn3comment;
+                answbtn3.setAttribute('id', 'AnswerThree');
+                answbtn3.setAttribute('class', 'buttonChoice');
+                document.body.appendChild(answbtn3);
+
+                answbtn4.innerHTML = answbtn4comment;
+                answbtn4.setAttribute('id', 'AnswerFour');
+                answbtn4.setAttribute('class', 'buttonChoice');
+                document.body.appendChild(answbtn4);
+            };
+
+
+        </script>
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>

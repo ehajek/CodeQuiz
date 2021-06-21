@@ -1,0 +1,31 @@
+.buttonChoice {
+    display:block; 
+    justify-content:left; 
+    margin:10px 90px; 
+    padding:5px; 
+    background:purple; 
+    border-radius: 5px;
+    color: white;
+    border-style: none;
+}
+.buttonStart {
+    display:block; 
+    justify-content:center; 
+    margin: auto; 
+    padding:5px; 
+    background:purple;
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+}
+
+h5 {
+    color: purple;
+}
+
+script {
+    width: 50%;
+    text-align:left; 
+    justify-content:center; 
+    align-items:center;
+}
